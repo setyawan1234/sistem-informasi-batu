@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Location Cafe Sawah</title>
+    </head>
+    <body>
+
+        <div id="map" style="width: 100%;height: 800px;"></div>
+        <script>
+        function initMap() {
+            var cafesawah = { lat: -7.854579290727389, lng: 112.45395439785625 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 9,
+                center: cafesawah
+            });
+            var contentString ='<img src=cafesawah.jpg width=100px>';
+            var infoWindow = new google.maps.InfoWindow({
+                content: contentString,
+                position: new google.maps.LatLng(-7.854579290727389, 112.45395439785625),
+            });
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(-7.854579290727389, 112.45395439785625),
+                map: map,
+                animation: google.maps.Animation.BOUNCE
+            })
+            infoWindow.open(map);
+        }
+        </script>
+        
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-4IEoXpifIIogADFqE9ueSo7HrCz_BfM&callback=initMap"></script>
+    </body>
+</html>

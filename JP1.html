@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Location Jatim Park 1</title>
+    </head>
+    <body>
+
+        <div id="map" style="width: 100%;height: 800px;"></div>
+        <script>
+        function initMap() {
+            var jatimpark1 = { lat: -7.884131463603265, lng: 112.52482967361281 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 9,
+                center: jatimpark1
+            });
+            var contentString ='<img src=jatimpark1.jpg width=100px>';
+            var infoWindow = new google.maps.InfoWindow({
+                content: contentString,
+                position: new google.maps.LatLng(-7.884131463603265, 112.52482967361281),
+            });
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(-7.884131463603265, 112.52482967361281),
+                map: map,
+                animation: google.maps.Animation.BOUNCE
+            })
+            infoWindow.open(map);
+        }
+        </script>
+        
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-4IEoXpifIIogADFqE9ueSo7HrCz_BfM&callback=initMap"></script>
+    </body>
+</html>

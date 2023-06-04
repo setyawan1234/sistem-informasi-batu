@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Location Selecta</title>
+    </head>
+    <body>
+
+        <div id="map" style="width: 100%;height: 800px;"></div>
+        <script>
+        function initMap() {
+            var selecta = { lat: -7.818306, lng: 112.525327 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 9,
+                center: selecta
+            });
+            var contentString ='<img src=selecta.jpg width=100px>';
+            var infoWindow = new google.maps.InfoWindow({
+                content: contentString,
+                position: new google.maps.LatLng(-7.818306, 112.525327),
+            });
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(-7.818306, 112.525327),
+                map: map,
+                animation: google.maps.Animation.BOUNCE
+            })
+            infoWindow.open(map);
+        }
+        </script>
+        
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-4IEoXpifIIogADFqE9ueSo7HrCz_BfM&callback=initMap"></script>
+    </body>
+</html>
